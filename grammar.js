@@ -6,7 +6,7 @@ var grammar = tracery.createGrammar({
     'species name': '#species name prefix.capitalize##species name suffix#',
     'species name prefix': [
         'drak',
-        '#body part#',
+        '#namesake body part#',
         '#color#',
         '#element#',
         '#emotion#',
@@ -22,11 +22,12 @@ var grammar = tracery.createGrammar({
         'gon',
         'saur',
         'zard',
-        '#body part#',
+        '#namesake body part#',
     ],
-    'body part': [
+    'namesake body part': [
         'claw',
         'fang',
+        'horn',
         'scale',
         'snout',
         'wing',
@@ -214,7 +215,7 @@ var grammar = tracery.createGrammar({
 
     'abstract fact': [
         '#legend intro# #legend content#',
-        'It is #endangered# due to #endangerment reason#.',
+        'It #is endangered# due to #endangerment reason#.',
         'Whenever you #presence notification# #at a time#, #it is there#.'
     ],
 
@@ -281,10 +282,26 @@ var grammar = tracery.createGrammar({
         'a train',
     ],
 
-    'endangered': [
-        'almost extinct',
-        'at threat of extinction',
-        'critically endangered',
+    'body part': [
+        'claws',
+        'fangs',
+        'horns',
+        'scales',
+        'snout',
+        'wings',
+    ],
+
+    'is endangered': '#endangered 1#',
+    'endangered 1': ['is at threat of extinction', '#endangered 2#'],
+    'endangered 2': ['is critically endangered', '#endangered 3#'],
+    'endangered 3': ['is almost extinct', '#endangered 4#'],
+    'endangered 4': ['is extinct save for a single specimen', '#endangered 5#'],
+    'endangered 5': 'was believed extinct #extinction period#',
+    'extinction period': [
+        'for a decade',
+        'for a century',
+        'for centuries',
+        'since antiquity',
     ],
 
     'endangerment reason': [
