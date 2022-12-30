@@ -183,6 +183,7 @@ var grammar = tracery.createGrammar({
         // positive
         'covets',
         'enjoys',
+        'is drawn to',
         'likes',
         'obsesses over',
         'prefers',
