@@ -214,7 +214,7 @@ var grammar = tracery.createGrammar({
     ],
 
     'abstract fact': [
-        '#legend intro# #legend content#',
+        '#legend intro# #[#body part!#]legend content#',
         'It #is endangered# due to #endangerment reason#.',
         'Whenever you #presence notification# #at a time#, #it is there#.'
     ],
@@ -245,12 +245,12 @@ var grammar = tracery.createGrammar({
 
     'has remarkable trait': [
         'can regenerate from any damage',
-        'constantly emits #sound#',
-        'evokes thoughts of #thing# in all who witness it',
-        'has astounding healing powers',
-        'is brighter than the sun',
-        'is harder than diamond',
-        'is not made of any earthly substance',
+        'constantly emit#body part s# #sound#',
+        'evoke#body part s# thoughts of #thing# in all who witness it',
+        '#body part has# astounding healing powers',
+        '#body part is# brighter than the sun',
+        '#body part is# harder than diamond',
+        '#body part is# not made of any earthly substance',
     ],
 
     'destroy': [
@@ -282,13 +282,13 @@ var grammar = tracery.createGrammar({
         'a train',
     ],
 
-    'body part': [
-        'claws',
-        'fangs',
-        'horns',
-        'scales',
-        'snout',
-        'wings',
+    'body part!': [
+        '[body part:claws][body part is:are][body part has:have][body part s:]',
+        '[body part:fangs][body part is:are][body part has:have][body part s:]',
+        '[body part:horns][body part is:are][body part has:have][body part s:]',
+        '[body part:scales][body part is:are][body part has:have][body part s:]',
+        '[body part:snout][body part is:is][body part has:has][body part s:s]',
+        '[body part:wings][body part is:are][body part has:have][body part s:]',
     ],
 
     'is endangered': '#endangered 1#',
