@@ -1,0 +1,1 @@
+Dragondex Generator is by helado de brownie, with substantial contributions by NalathniDragon.

@@ -181,11 +181,16 @@ var grammar = tracery.createGrammar({
 
     'likes': [
         // positive
+        'covets',
         'enjoys',
         'likes',
+        'obsesses over',
         'prefers',
         // negative
+        'disdains',
         'dislikes',
+        'despises',
+        'fears',
         'is repulsed by',
         'shuns',
     ],
@@ -223,6 +228,17 @@ var grammar = tracery.createGrammar({
         'it can #destroy# #a destroyable item# with its #body part#.',
         'it can out#maneuver# #a vehicle#.',
         'it only appears to those pure of heart.',
+        'its #body part# #has remarkable trait#.',
+    ],
+
+    'has remarkable trait': [
+        'can regenerate from any damage',
+        'constantly emits #sound#',
+        'evokes thoughts of #thing# in all who witness it',
+        'has astounding healing powers',
+        'is brighter than the sun',
+        'is harder than diamond',
+        'is not made of any earthly substance',
     ],
 
     'destroy': [
