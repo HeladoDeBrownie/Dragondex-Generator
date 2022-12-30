@@ -216,7 +216,7 @@ var grammar = tracery.createGrammar({
     'abstract fact': [
         '#legend intro# #[#body part!#]legend content#',
         'It #is endangered# due to #endangerment reason#.',
-        'Whenever you #presence notification# #at a time#, #it is there#.'
+        'Whenever you #presence notification# #at a time#, #presence consequence#.'
     ],
 
     'legend intro': [
@@ -346,12 +346,38 @@ var grammar = tracery.createGrammar({
         'on a rainy day',
         'while no one else is in the room',
     ],
+    'presence consequence': [
+        '#it is there#',
+        '#presence advice#',
+    ],
     'it is there': [
-        'be ready for it',
-        'it is already too late',
         'it is there',
+        'it is already too late',
+        'you are about to #be visited#',
+    ],
+    'presence advice': [
+        'be ready for it',
         "run and don't look back",
-        'you are about to be visited',
+        'stand perfectly still and #act unthreatening#',
+    ],
+    'act unthreatening': [
+        'do not make eye contact',
+        'do not speak or make a sound',
+        "repeat your village's #mantra# until it leaves",
+        'slowly crouch as low as you can',
+        'think only positive thoughts',
+    ],
+    'mantra': [
+        'beast lullaby',
+        'draconic mantra',
+        'prayer for safety',
+    ],
+    'be visited': [
+        'be graced with its presence',
+        'be haunted by one',
+        'be one of the lucky few',
+        'be visited',
+        'gain a new friend',
     ],
 
     /* compatibility */
