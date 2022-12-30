@@ -1,0 +1,53 @@
+html {
+    animation:      fade-in 2s;
+    background:     linear-gradient(rgb(32, 36, 32), black);
+    color:          rgb(248, 248, 248);
+    font-family:    Arial, Helvetica, sans-serif;
+    font-size:      16pt;
+    min-height:     100%;
+    min-width:      100%;
+    vertical-align: middle;
+}
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 128px;
+    max-width: 32em;
+    padding: 1em;
+    text-align: center;
+}
+
+#result {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 24em;
+    white-space: pre-wrap;
+}
+
+a {
+    color: rgb(128, 128, 247);
+}
+
+button {
+    -webkit-appearance: none;
+    background:         rgb(248, 248, 248);
+    color:              rgb(32, 36, 32);
+    font-size:          75%;
+    height:             32px;
+}
+
+.information {
+    font-size:  75%;
+}
+
+@keyframes fade-in {
+    from {
+        opacity:    0;
+    }
+
+    to {
+        opacity:    1;
+    }
+}
