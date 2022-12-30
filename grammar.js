@@ -24,14 +24,7 @@ var grammar = tracery.createGrammar({
         'zard',
         '#namesake body part#',
     ],
-    'namesake body part': [
-        'claw',
-        'fang',
-        'horn',
-        'scale',
-        'snout',
-        'wing',
-    ],
+    'namesake body part': '#[#body part!#]singular body part#',
     'prefixes that want to be matched with -gon': [
         'carcino',
         'cryo',
@@ -283,12 +276,16 @@ var grammar = tracery.createGrammar({
     ],
 
     'body part!': [
-        '[body part:claws][body part is:are][body part has:have][body part s:]',
-        '[body part:fangs][body part is:are][body part has:have][body part s:]',
-        '[body part:horns][body part is:are][body part has:have][body part s:]',
-        '[body part:scales][body part is:are][body part has:have][body part s:]',
-        '[body part:snout][body part is:is][body part has:has][body part s:s]',
-        '[body part:wings][body part is:are][body part has:have][body part s:]',
+        '[body part:barbs][singular body part:barb][body part is:are][body part has:have][body part s:]',
+        '[body part:claws][singular body part:claw][body part is:are][body part has:have][body part s:]',
+        '[body part:crest][singular body part:crest][body part is:is][body part has:has][body part s:s]',
+        '[body part:fangs][singular body part:fang][body part is:are][body part has:have][body part s:]',
+        '[body part:horns][singular body part:horn][body part is:are][body part has:have][body part s:]',
+        '[body part:scales][singular body part:scale][body part is:are][body part has:have][body part s:]',
+        '[body part:snout][singular body part:snout][body part is:is][body part has:has][body part s:s]',
+        '[body part:stinger][singular body part:stinger][body part is:is][body part has:has][body part s:s]',
+        '[body part:tail][singular body part:tail][body part is:is][body part has:has][body part s:s]',
+        '[body part:wings][singular body part:wing][body part is:are][body part has:have][body part s:]',
     ],
 
     'is endangered': '#endangered 1#',
