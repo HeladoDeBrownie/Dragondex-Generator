@@ -204,7 +204,6 @@ var grammar = tracery.createGrammar({
         'perfume',
         'seawater',
         'sulfur',
-        '#diet#',
     ],
 
     'abstract fact': [
