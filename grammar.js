@@ -36,7 +36,9 @@ var grammar = tracery.createGrammar({
         'cryo',
         'hydro',
         'nitro',
+        'para',
         'patho',
+        'poly',
     ],
     'color': [
         'blue',
