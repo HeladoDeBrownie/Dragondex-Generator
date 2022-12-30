@@ -228,8 +228,18 @@ var grammar = tracery.createGrammar({
     'legend content': [
         'it can #destroy# #a destroyable item# with its #body part#.',
         'it can out#maneuver# #a vehicle#.',
-        'it only appears to those pure of heart.',
+        'it only appears to #qualified people#.',
         'its #body part# #has remarkable trait#.',
+    ],
+
+    'qualified people': [
+        'lone travelers',
+        'those at their lowest',
+        'those close to death',
+        'those most in need',
+        'those pure of heart',
+        'those who have seen death',
+        'those with wicked intentions',
     ],
 
     'has remarkable trait': [
