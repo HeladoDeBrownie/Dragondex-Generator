@@ -2,7 +2,7 @@ html {
     animation:      fade-in 2s;
     background:     linear-gradient(rgb(16, 16, 16), rgb(36, 32, 32));
     color:          rgb(248, 248, 248);
-    font-family:    Arial, Helvetica, sans-serif;
+    font-family:    monospace;
     font-size:      16pt;
     min-height:     100%;
     min-width:      100%;
@@ -17,7 +17,7 @@ body {
     text-align: center;
 }
 
-#greeting {
+.greeting {
     text-align: left;
 }
 
@@ -40,11 +40,12 @@ button {
     -webkit-appearance: none;
     background:         rgb(248, 248, 248);
     color:              rgb(32, 36, 32);
+    font-family:        monospace;
     font-size:          75%;
     height:             32px;
 }
 
-.information {
+.information, .greeting {
     font-size:  75%;
 }
 
