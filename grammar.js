@@ -231,19 +231,23 @@ var grammar = tracery.createGrammar({
         'perfume',
         'seawater',
         'sulfur',
+        '#human food#',
     ],
 
     'abstract fact': [
         '#legend intro# #[#body part!#]legend content#',
         'It #is endangered# due to #endangerment reason#.',
-        'Whenever you #presence notification# #at a time#, #presence consequence#.'
+        'Whenever you #presence notification# #at a time#, #presence consequence#.',
     ],
 
     'legend intro': [
+        'According to dragon ranchers,',
+        "It's commonly believed that",
         "It's said that",
         'Legends say',
         'Rumor has it',
         'Scientists have observed that',
+        'Travelers have reported that',
     ],
 
     'legend content': [
@@ -274,15 +278,31 @@ var grammar = tracery.createGrammar({
     ],
 
     'destroy': [
+        'annihilate',
         'crush',
         'destroy',
+        'rip apart',
         'tear through',
     ],
 
     'a destroyable item': [
-        'a boulder',
-        'a house',
+        '#a natural feature#',
+        '#a building#',
         '#a vehicle#',
+    ],
+
+    'a natural feature': [
+        'a boulder',
+        'a hillside',
+        'a mountain',
+    ],
+
+    'a building': [
+        'a bridge',
+        'a castle',
+        'a fortress',
+        'a house',
+        'a skyscraper',
     ],
 
     'maneuver': [
@@ -293,12 +313,14 @@ var grammar = tracery.createGrammar({
     ],
 
     'a vehicle': [
+        'a bus',
         'a car',
         'a chariot',
         'a cruise missile',
         'a freight ship',
         'a helicopter',
         'a sailboat',
+        'a submarine',
         'a train',
     ],
 
