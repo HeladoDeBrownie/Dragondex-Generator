@@ -176,6 +176,7 @@ var grammar = tracery.createGrammar({
         'subsists on',
     ],
     'diet': [
+        'bird eggs',
         'fruits',
         'humans',
         'lesser beasts',
@@ -184,30 +185,77 @@ var grammar = tracery.createGrammar({
         'rocks',
         '#human food# stolen from humans',
     ],
-    'human food': [
-        'bread',
-        'burritos',
-        'spaghetti',
-        'steak',
-    ],
 
     'inhabits': [
+        'appears in',
         'inhabits',
         'is often found in',
         'lives in',
     ],
     'places': [
-        'clouds',
-        'forests',
+        '#forests#',
         '#human places#',
-        'swamps',
+        '#the sky#',
+        '#swamps#',
+        '#watery places#',
+    ],
+    'forests': [
+        'densely forested areas',
+        'forests',
+        'undergrowth',
+        'woods',
+        '#uncommon forests#',
+    ],
+    'uncommon forests': [
+        'coniferous forests',
+        'deep woods',
+        'mysterious clearings in the woods',
     ],
     'human places': [
+        'abandoned villages',
         'basements',
         'chimneys',
         'houses',
         'kitchens',
+        'sheds',
         'the walls of houses',
+        'water closets',
+        'wells',
+    ],
+    'the sky': [
+        'clouds',
+        'stormclouds',
+        '#uncommon sky places#',
+    ],
+    'uncommon sky places': [
+        'tornadoes',
+        'the upper stratosphere',
+        '#rare sky places#',
+    ],
+    'rare sky places': [
+        'low orbit',
+        'places where the horizon touches the earth',
+        'places where mountaintops touch the sky',
+    ],
+    'swamps': [
+        'grottos',
+        'marshes',
+        'mires',
+        'swamps',
+        'wetlands',
+    ],
+    'watery places': [
+        'lakes',
+        'ponds',
+        'rivers',
+        'streams',
+        '#the ocean#',
+    ],
+    'the ocean': [
+        'the deep ocean',
+        'the forgotten depths',
+        'the ocean',
+        'ocean trenches',
     ],
 
     'likes': [
@@ -231,8 +279,10 @@ var grammar = tracery.createGrammar({
         'darkness',
         'moonlight',
         'the scent of #scented thing#',
+        'shiny things',
         'solitude',
         'sunlight',
+        'warm rocks',
     ],
     'scented thing': [
         'dew',
@@ -282,6 +332,7 @@ var grammar = tracery.createGrammar({
         'a boulder',
         'a hillside',
         'a mountain',
+        'a tree',
     ],
     'a building': [
         'a bridge',
@@ -297,20 +348,27 @@ var grammar = tracery.createGrammar({
         'swim',
     ],
     'a vehicle': [
+        'a chariot',
+        'a sailboat',
+        'a train',
+        '#an uncommon vehicle#',
+    ],
+    'an uncommon vehicle': [
         'a bus',
         'a car',
-        'a chariot',
-        'a cruise missile',
         'a freight ship',
+        '#a rare vehicle#',
+    ],
+    'a rare vehicle': [
+        'a cruise missile',
         'a helicopter',
-        'a sailboat',
         'a submarine',
-        'a train',
     ],
     'qualified people': [
         'lone travelers',
         'those at their lowest',
         'those close to death',
+        'those in possession of #human food#',
         'those most in need',
         'those pure of heart',
         'those who have seen death',
@@ -371,10 +429,12 @@ var grammar = tracery.createGrammar({
     ],
     'at a specific time': [
         'after someone has died',
+        "after you've spoken its name",
         'during a joyous celebration',
         'in the dead of night',
         'on a dewy morning',
         'on a rainy day',
+        'on the night of a full moon',
         'while no one else is in the room',
     ],
     'presence consequence': [
@@ -411,6 +471,14 @@ var grammar = tracery.createGrammar({
         'prayer for safety',
     ],
 
+    'human food': [
+        'bread',
+        'burritos',
+        'farm produce',
+        'spaghetti',
+        'steak',
+        'sweets',
+    ],
     'sound': [
         'a deep rumbling',
         'a distant chiming',
