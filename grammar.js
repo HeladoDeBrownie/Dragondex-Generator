@@ -193,11 +193,18 @@ var grammar = tracery.createGrammar({
         'lives in',
     ],
     'places': [
+        '#cold places#',
         '#forests#',
         '#human places#',
         '#the sky#',
         '#swamps#',
         '#watery places#',
+    ],
+    'cold places': [
+        'mountaintops',
+        'the polar regions',
+        'snowy #forests#',
+        'tundras',
     ],
     'forests': [
         'densely forested areas',
