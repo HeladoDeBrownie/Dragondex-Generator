@@ -1,49 +1,18 @@
 var grammar = tracery.createGrammar({
-    'origin':       'SPECIES: #species name#\n#stat 1#\n#stat 2#\n#stat 3#\n\n#description#\n\nCOMPATIBLE WITH: #compatibility#',
+    'origin': '~ #species name.toUpperCase# ~\n\n#stat block#\n\n#description#\n\nCOMPATIBLE WITH: #compatibility#',
 
-    /* species names */
+    /* species name */
 
-    'species name': '#species name prefix.capitalize##species name suffix#',
+    'species name': '#species name prefix##species name suffix#',
+
     'species name prefix': [
-        'drak',
-        '#namesake body part#',
         '#color#',
+        '#dra*-#',
         '#element#',
         '#emotion#',
         '#prefixes that want to be matched with -gon#',
         '#size#',
-    ],
-    'species name suffix': [
-        'breath',
-        'don',
-        'gon',
-        'saur',
-        'zard',
-        '#-dra*#',
         '#namesake body part#',
-    ],
-    '-dra*': [
-        'dra',
-        'dracky',
-        'drak',
-        'drake',
-    ],
-    'namesake body part': '#[#body part!#]singular body part#',
-    'prefixes that want to be matched with -gon': [
-        'carcino',
-        'cryo',
-        'hydro',
-        'nitro',
-        'para',
-        'patho',
-        '#number prefix#',
-    ],
-    'number prefix': [
-        'penta',
-        'hexa',
-        'hepta',
-        'octa',
-        'poly',
     ],
     'color': [
         '#basic color#', '#basic color#',
@@ -72,6 +41,11 @@ var grammar = tracery.createGrammar({
         'quartz',
         'slate',
     ],
+    'dra*-': [
+        'drag',
+        'drak',
+        'draken',
+    ],
     'element': [
         'aero',
         'pulmo',
@@ -93,6 +67,22 @@ var grammar = tracery.createGrammar({
         'woe',
         'wonder',
     ],
+    'prefixes that want to be matched with -gon': [
+        'carcino',
+        'cryo',
+        'hydro',
+        'nitro',
+        'para',
+        'patho',
+        '#number prefix#',
+    ],
+    'number prefix': [
+        'penta',
+        'hexa',
+        'hepta',
+        'octa',
+        'poly',
+    ],
     'size': [
         'big',
         'great',
@@ -102,7 +92,27 @@ var grammar = tracery.createGrammar({
         'tiny',
     ],
 
-    /* stats */
+    'species name suffix': [
+        'breath',
+        'don',
+        'gon',
+        'saur',
+        'zard',
+        '#-dra*#',
+        '#namesake body part#',
+    ],
+    '-dra*': [
+        'dra',
+        'dracky',
+        'drak',
+        'drake',
+    ],
+
+    'namesake body part': '#[#body part!#]singular body part#',
+
+    /* stat block */
+
+    'stat block': '#stat 1#\n#stat 2#\n#stat 3#',
 
     'stat 1': '#stat 1 name# #stat value#',
     'stat 1 name': [
@@ -155,7 +165,7 @@ var grammar = tracery.createGrammar({
 
     'concrete fact': [
         'It #eats# #diet#.',
-        'It #inhabits# #type of place#.',
+        'It #inhabits# #places#.',
         'It #likes# #thing#.',
     ],
 
@@ -186,7 +196,7 @@ var grammar = tracery.createGrammar({
         'is often found in',
         'lives in',
     ],
-    'type of place': [
+    'places': [
         'clouds',
         'forests',
         '#human places#',
@@ -235,11 +245,12 @@ var grammar = tracery.createGrammar({
     ],
 
     'abstract fact': [
-        '#legend intro# #[#body part!#]legend content#',
-        'It #is endangered# due to #endangerment reason#.',
-        'Whenever you #presence notification# #at a time#, #presence consequence#.',
+        '#legend#',
+        '#endangerment#',
+        '#presence#',
     ],
 
+    'legend': '#legend intro# #[#body part!#]legend content#',
     'legend intro': [
         'According to dragon ranchers,',
         "It's commonly believed that",
@@ -249,34 +260,12 @@ var grammar = tracery.createGrammar({
         'Scientists have observed that',
         'Travelers have reported that',
     ],
-
     'legend content': [
         'it can #destroy# #a destroyable item# with its #body part#.',
         'it can out#maneuver# #a vehicle#.',
         'it only appears to #qualified people#.',
         'its #body part# #has remarkable trait#.',
     ],
-
-    'qualified people': [
-        'lone travelers',
-        'those at their lowest',
-        'those close to death',
-        'those most in need',
-        'those pure of heart',
-        'those who have seen death',
-        'those with wicked intentions',
-    ],
-
-    'has remarkable trait': [
-        'can regenerate from any damage',
-        'constantly emit#body part s# #sound#',
-        'evoke#body part s# thoughts of #thing# in all who witness it',
-        '#body part has# astounding healing powers',
-        '#body part is# brighter than the sun',
-        '#body part is# harder than diamond',
-        '#body part is# not made of any earthly substance',
-    ],
-
     'destroy': [
         'annihilate',
         'crush',
@@ -284,19 +273,16 @@ var grammar = tracery.createGrammar({
         'rip apart',
         'tear through',
     ],
-
     'a destroyable item': [
         '#a natural feature#',
         '#a building#',
         '#a vehicle#',
     ],
-
     'a natural feature': [
         'a boulder',
         'a hillside',
         'a mountain',
     ],
-
     'a building': [
         'a bridge',
         'a castle',
@@ -304,14 +290,12 @@ var grammar = tracery.createGrammar({
         'a house',
         'a skyscraper',
     ],
-
     'maneuver': [
         'dig',
         'fly',
         'run',
         'swim',
     ],
-
     'a vehicle': [
         'a bus',
         'a car',
@@ -323,20 +307,26 @@ var grammar = tracery.createGrammar({
         'a submarine',
         'a train',
     ],
-
-    'body part!': [
-        '[body part:barbs][singular body part:barb][body part is:are][body part has:have][body part s:]',
-        '[body part:claws][singular body part:claw][body part is:are][body part has:have][body part s:]',
-        '[body part:crest][singular body part:crest][body part is:is][body part has:has][body part s:s]',
-        '[body part:fangs][singular body part:fang][body part is:are][body part has:have][body part s:]',
-        '[body part:horns][singular body part:horn][body part is:are][body part has:have][body part s:]',
-        '[body part:scales][singular body part:scale][body part is:are][body part has:have][body part s:]',
-        '[body part:snout][singular body part:snout][body part is:is][body part has:has][body part s:s]',
-        '[body part:stinger][singular body part:stinger][body part is:is][body part has:has][body part s:s]',
-        '[body part:tail][singular body part:tail][body part is:is][body part has:has][body part s:s]',
-        '[body part:wings][singular body part:wing][body part is:are][body part has:have][body part s:]',
+    'qualified people': [
+        'lone travelers',
+        'those at their lowest',
+        'those close to death',
+        'those most in need',
+        'those pure of heart',
+        'those who have seen death',
+        'those with wicked intentions',
+    ],
+    'has remarkable trait': [
+        'can regenerate from any damage',
+        'constantly emit#body part s# #sound#',
+        'evoke#body part s# thoughts of #thing# in all who witness it',
+        '#body part has# astounding healing powers',
+        '#body part is# brighter than the sun',
+        '#body part is# harder than diamond',
+        '#body part is# not made of any earthly substance',
     ],
 
+    'endangerment': 'It #is endangered# due to #endangerment reason#.',
     'is endangered': '#endangered 1#',
     'endangered 1': ['is at threat of extinction', '#endangered 2#'],
     'endangered 2': ['is critically endangered', '#endangered 3#'],
@@ -349,7 +339,6 @@ var grammar = tracery.createGrammar({
         'for centuries',
         'since antiquity',
     ],
-
     'endangerment reason': [
         'being outcompeted for food',
         'food scarcity',
@@ -357,11 +346,12 @@ var grammar = tracery.createGrammar({
         'pollution',
     ],
 
-    'presence notification': [
+    'presence': 'Whenever you #notice something odd# #at a specific time#, #presence consequence#.',
+    'notice something odd': [
         'are overwhelmed with #fear#',
         'feel #feeling#',
         'hear #sound#',
-        'smell #smell#',
+        'smell #odd smell#',
     ],
     'fear': [
         'anxiety',
@@ -374,17 +364,12 @@ var grammar = tracery.createGrammar({
         'a weariness deep in your bones',
         'an unshakable chill',
     ],
-    'sound': [
-        'a deep rumbling',
-        'a distant chiming',
-        'indistinct whispers',
-    ],
-    'smell': [
+    'odd smell': [
         '#scented thing#',
         'something rotting',
         'something sickly sweet',
     ],
-    'at a time': [
+    'at a specific time': [
         'after someone has died',
         'during a joyous celebration',
         'in the dead of night',
@@ -400,6 +385,13 @@ var grammar = tracery.createGrammar({
         'it is there',
         'it is already too late',
         'you are about to #be visited#',
+    ],
+    'be visited': [
+        'be graced with its presence',
+        'be haunted by one',
+        'be one of the lucky few',
+        'be visited',
+        'gain a new friend',
     ],
     'presence advice': [
         'be ready for it',
@@ -418,12 +410,11 @@ var grammar = tracery.createGrammar({
         'draconic mantra',
         'prayer for safety',
     ],
-    'be visited': [
-        'be graced with its presence',
-        'be haunted by one',
-        'be one of the lucky few',
-        'be visited',
-        'gain a new friend',
+
+    'sound': [
+        'a deep rumbling',
+        'a distant chiming',
+        'indistinct whispers',
     ],
 
     /* compatibility */
@@ -437,6 +428,26 @@ var grammar = tracery.createGrammar({
         'others of its species',
         'none; do not house with other dragons',
     ],
+
+    /* miscellaneous */
+
+    'body part!': [
+        '[body part:barbs][singular body part:barb][body part is:are][body part has:have][body part s:]',
+        '[body part:claws][singular body part:claw][body part is:are][body part has:have][body part s:]',
+        '[body part:crest][singular body part:crest][body part is:is][body part has:has][body part s:s]',
+        '[body part:fangs][singular body part:fang][body part is:are][body part has:have][body part s:]',
+        '[body part:horns][singular body part:horn][body part is:are][body part has:have][body part s:]',
+        '[body part:scales][singular body part:scale][body part is:are][body part has:have][body part s:]',
+        '[body part:snout][singular body part:snout][body part is:is][body part has:has][body part s:s]',
+        '[body part:stinger][singular body part:stinger][body part is:is][body part has:has][body part s:s]',
+        '[body part:tail][singular body part:tail][body part is:is][body part has:has][body part s:s]',
+        '[body part:wings][singular body part:wing][body part is:are][body part has:have][body part s:]',
+    ],
 })
 
 grammar.addModifiers(baseEngModifiers)
+grammar.addModifiers({
+    toUpperCase: function (string) {
+        return string.toUpperCase()
+    }
+})
