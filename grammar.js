@@ -3,7 +3,7 @@ var grammar = tracery.createGrammar({
 
     /* species name */
 
-    'species name': '#species name prefix##species name suffix#',
+    'species name': '#species name prefix.capitalize##species name suffix#',
 
     'species name prefix': [
         '#color#',
