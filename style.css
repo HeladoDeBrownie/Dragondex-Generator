@@ -36,6 +36,7 @@ button {
     background: rgb(248, 248, 248);
     font: 100% monospace;
     color: rgb(32, 36, 32);
+    height: 3em;
 }
 
 @keyframes fade-in {
