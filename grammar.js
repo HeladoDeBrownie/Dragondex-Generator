@@ -161,9 +161,9 @@ var grammar = tracery.createGrammar({
 
     /* description */
 
-    'description': ['#concrete fact# #abstract fact#'],
+    'description': ['#first fact# #second fact#'],
 
-    'concrete fact': [
+    'first fact': [
         'It #eats# #diet#.',
         'It #inhabits# #places#.',
         'It #likes# #thing#.',
@@ -301,7 +301,7 @@ var grammar = tracery.createGrammar({
         '#human food#',
     ],
 
-    'abstract fact': [
+    'second fact': [
         '#conservation#',
         '#legend#',
         '#presence#',
@@ -309,6 +309,7 @@ var grammar = tracery.createGrammar({
 
     'conservation': [
         '#endangerment#',
+        '#[#body part!#]growing up#',
         '#[#body part!#]reproduction#',
     ],
     'endangerment': 'It #is endangered# due to #endangerment reason#.',
@@ -457,6 +458,55 @@ var grammar = tracery.createGrammar({
         'powerful',
         'sharp',
         'venomous',
+    ],
+    'growing up': 'The #young# #young fact#.',
+    'young': [
+        'fledgelings',
+        'little ones',
+        'nestlings',
+        'pups',
+        'young',
+    ],
+    'young fact': [
+        "have not yet developed their #body part quality# #body part#, but are still #dangerous#",
+        'enjoy playing with #play partner#',
+        '#need protection# for the first #time period# of their lives',
+    ],
+    'dangerous': [
+        'dangerous',
+        'formidable',
+        'rough to handle',
+        'temperamental',
+        'tough',
+    ],
+    'play partner': [
+        'adults of their species',
+        'each other',
+        'humans',
+        'lesser beasts#possible play caveat#',
+        '#species name##possible play caveat#',
+    ],
+    'possible play caveat': [
+        '', '', '',
+        '; #play caveat#',
+    ],
+    'play caveat': [
+        'it is begrudgingly reciprocated',
+        'however, it is viewed as aggression',
+    ],
+    'need protection': [
+        'may need occasional oversight',
+        'need to be protected',
+        'need to be defended from predatory #species name#s',
+        'need constant vigilance',
+        'are almost completely helpless',
+    ],
+    'time period': [
+        'week',
+        'month',
+        'year',
+        'few years',
+        'decade or so',
     ],
 
     'legend': '#legend intro# #[#body part!#]legend content#',
